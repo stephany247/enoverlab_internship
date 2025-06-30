@@ -7,34 +7,51 @@ import Logout from "./components/Logout";
 import Settings from "./components/Settings";
 import SmartHome from "./components/SmartHome";
 import EmergencyContact from "./components/EmergencyContact";
+import {
+  FiHome,
+  FiCalendar,
+  FiPhone,
+  FiMonitor,
+  FiMusic,
+  FiSettings,
+  FiLogOut,
+  FiSmartphone
+
+} from "react-icons/fi";
 
 // Reusable Sidebar Link Component
-const SidebarLink = ({ to, icon, label }) => (
-  <NavLink
-    to={to}
-    className={({ isActive }) =>
-      isActive
-        ? "p-4 w-full text-[#013BC0] font-semibold bg-[#C7D4F1] rounded-md"
-        : "p-4 w-full text-gray-600 hover:text-blue-600 rounded-md"
-    }
-  >
-    <div className="flex items-center gap-4">
-      <img src={icon} alt={`${label} icon`} className="w-5 h-5" />
-      <p>{label}</p>
-    </div>
+const SidebarLink = ({ to, icon: Icon, label }) => (
+  <NavLink to={to}>
+    {({ isActive }) => (
+      <div
+        className={`p-4 w-full flex items-center gap-4 ${
+          isActive
+            ? "text-[#013BC0] font-medium bg-[#E6ECF9]"
+            : "text-[#666666] hover:text-[#013BC0]"
+        }`}
+      >
+        <Icon
+          className={`w-5 h-5 ${
+            isActive ? "text-[#013BC0]" : "text-gray-[#666666]"
+          }`}
+        />
+        <p>{label}</p>
+      </div>
+    )}
   </NavLink>
 );
+
 
 export default function App() {
   return (
     <div className="min-h-screen   grid grid-cols-1 lg:grid-cols-[300px_1fr] bg-[#EAEEF0] p-10">
       {/* Sidebar */}
-      <aside className="hidden lg:block" >
-        <div className="w-[287px] fixed bg-white h-[814px] rounded-[16px] p-5 flex flex-col justify-between">
+      <aside className="hidden lg:block">
+        <div className="w-[287px] fixed bg-white h-[814px] rounded-[16px]  flex flex-col justify-between">
           {/* Top Section */}
           <div>
             {/* Logo Section */}
-            <div className="flex items-center gap-2 h-[30px] mb-6">
+            <div className="flex items-center gap-2 h-[90px] mb-6 p-5">
               <img
                 src={assets.logo}
                 alt="Company Logo"
@@ -43,29 +60,29 @@ export default function App() {
               <h1 className="text-[25px] text-[#013BC0] font-[600]">Jermai</h1>
             </div>
 
-            <hr className="border-t border-[#E5E5E5] mb-4" />
+            <hr className="border-t border-[#E5E5E5] mb-8" />
 
             {/* Nav Links */}
             <nav className="flex flex-col space-y-2">
-              <SidebarLink to="/home" icon={assets.homeIcon} label="Home" />
+              <SidebarLink to="/home" icon={FiHome} label="Home" />
               <SidebarLink
                 to="/schedule"
-                icon={assets.scheduleIcon}
+                icon={FiCalendar}
                 label="Schedule"
               />
               <SidebarLink
                 to="/emergencycontact"
-                icon={assets.phoneIcon}
+                icon={FiPhone}
                 label="Emergency Contact"
               />
               <SidebarLink
                 to="/smarthome"
-                icon={assets.smartphone}
+                icon={FiSmartphone}
                 label="Smart Home"
               />
               <SidebarLink
                 to="/entertainment"
-                icon={assets.musicIcon}
+                icon={FiMusic}
                 label="Entertainment"
               />
             </nav>
@@ -75,12 +92,12 @@ export default function App() {
             <div className="flex flex-col space-y-2 mt-20">
               <SidebarLink
                 to="/settings"
-                icon={assets.settingsIcon}
+                icon={FiSettings}
                 label="Settings"
               />
               <SidebarLink
                 to="/logout"
-                icon={assets.logoutIcon}
+                icon={FiLogOut}
                 label="Log Out"
               />
             </div>
@@ -89,7 +106,7 @@ export default function App() {
       </aside>
 
       {/* Main Content */}
-      <main className="text-black ml-4  w-full  rounded-md">
+      <main className="text-black ml-4   rounded-md">
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/schedule" element={<Schedule />} />
