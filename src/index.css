@@ -1,1 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap");
 @import "tailwindcss";
+
+@theme {
+  /* COLORS */
+  --color-global-gray: oklch(0.72 0.11 178);
+  --color-black: #1d1d1d;
+  --color-primary: #eaeef0;
+  --color-blue: #013bc0;
+  --color-light-blue: #c7d4f1;
+
+  --color-dark-gray: #666666;
+  --color-darker-gray: #414141;
+  --color-gray-text: #929292;
+  --color-blue-banner: #447dff;
+  --task-card: #f6f6f6;
+
+  /* FONT */
+  --font-sen: "Sen", "sans-serif";
+}
