@@ -1,12 +1,12 @@
 import { NavLink, Routes, Route } from "react-router-dom";
 import { assets } from "./assets/assets";
-import Home from "./components/Home";
-import Schedule from "./components/Schedule";
-import Entertainment from "./components/Entertainment";
-import Logout from "./components/Logout";
-import Settings from "./components/Settings";
-import SmartHome from "./components/SmartHome";
-import EmergencyContact from "./components/EmergencyContact";
+import Home from "./pages/Home";
+import Schedule from "./pages/Schedule";
+import Entertainment from "./pages/Entertainment";
+import Logout from "./pages/Logout";
+import Settings from "./pages/Settings";
+import SmartHome from "./pages/SmartHome";
+import EmergencyContact from "./pages/EmergencyContact";
 import {
   FiHome,
   FiCalendar,
@@ -44,7 +44,7 @@ const SidebarLink = ({ to, icon: Icon, label }) => (
 
 export default function App() {
   return (
-    <div className="min-h-screen   grid grid-cols-1 lg:grid-cols-[300px_1fr] bg-[#EAEEF0] p-10">
+    <div className="min-h-screen  grid grid-cols-1 lg:grid-cols-[300px_1fr] bg-[#EAEEF0] p-10">
       {/* Sidebar */}
       <aside className="hidden lg:block">
         <div className="w-[287px] fixed bg-white h-[814px] rounded-[16px]  flex flex-col justify-between">
@@ -106,7 +106,7 @@ export default function App() {
       </aside>
 
       {/* Main Content */}
-      <main className="text-black ml-4   rounded-md">
+      <main className="text-black ml-4  overflow-auto rounded-md">
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/schedule" element={<Schedule />} />
