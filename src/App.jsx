@@ -63,7 +63,7 @@ const SidebarLink = ({ to, icon: Icon, label }) => (
 
 export default function App() {
   return (
-    <div className="grid md:grid-cols-4 gap-x-6">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-x-6 p-4">
       {/* Sidebar */}
       <Sidebar />
 

@@ -9,12 +9,27 @@
   --color-blue: #013bc0;
   --color-light-blue: #c7d4f1;
 
+  --color-light-gray: #c5c5c5;
   --color-dark-gray: #666666;
   --color-darker-gray: #414141;
   --color-gray-text: #929292;
+  --color-dark-gray-text: #818181;
   --color-blue-banner: #447dff;
-  --task-card: #f6f6f6;
+  --color-task-card: #f6f6f6;
+
+  --color-light-pink: #fff5ec;
+  --color-light-pink-border: #ffead9;
+  --color-light-blue-card: #eaeeff;
+  --color-light-blue-border: #dbe1fb;
 
   /* FONT */
   --font-sen: "Sen", "sans-serif";
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
