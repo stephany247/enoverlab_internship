@@ -23,7 +23,7 @@ function Sidebar() {
             {/* <h1 className="text-2xl text-blue font-semibold">Jermai</h1> */}
           {/* </div> */}
 
-          <hr className="border-t border-[#E5E5E5] my-6" />
+          <hr className="border-t border-very-light-gray my-6" />
 
           {/* Nav Links */}
           <nav className="flex flex-col space-y-2">

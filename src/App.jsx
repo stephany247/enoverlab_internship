@@ -27,13 +27,13 @@ const SidebarLink = ({ to, icon: Icon, label }) => (
       <div
         className={`p-4 w-full flex items-center gap-4 ${
           isActive
-            ? "text-[#013BC0] font-medium bg-[#E6ECF9]"
-            : "text-[#666666] hover:text-[#013BC0]"
+            ? "text-blue font-medium bg-very-soft-blue"
+            : "text-dark-gray hover:text-blue"
         }`}
       >
         <Icon
           className={`w-5 h-5 ${
-            isActive ? "text-[#013BC0]" : "text-gray-[#666666]"
+            isActive ? "text-blue" : "text-dark-gray"
           }`}
         />
         <p>{label}</p>
@@ -44,12 +44,17 @@ const SidebarLink = ({ to, icon: Icon, label }) => (
 
 export default function App() {
   return (
-    <div className="grid md:grid-cols-4 gap-x-6">
+    <div className="flex min-h-screen">
       {/* Sidebar */}
-      <Sidebar />
+      <div
+        className="hidden md:block fixed w-60 bg-white shadow-md z-10 rounded-lg 
+                      md:h-screen lg:h-auto md:overflow-y-auto lg:overflow-visible md:pb-15 lg:pb-40"
+      >
+        <Sidebar />
+      </div>
 
       {/* Main Content */}
-      <main className="col-span-3 space-y-4">
+      <main className="flex-1 md:ml-58 lg:ml-64 p-4 space-y-4 md:overflow-y-auto ">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -58,7 +63,7 @@ export default function App() {
           <Route path="/smarthome" element={<SmartHome />} />
           <Route path="/entertainment" element={<Entertainment />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/Logout" element={<Logout />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </main>
     </div>
