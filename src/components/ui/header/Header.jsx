@@ -1,6 +1,7 @@
 
 import NavSearch from "./NavSearch";
 import { assets } from "../../../assets/assets";
+
 const userName = "Martha";
 // const userImage = profileImage;
 
