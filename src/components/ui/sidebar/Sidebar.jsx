@@ -26,7 +26,7 @@ function Sidebar() {
           <hr className="border-t border-[#E5E5E5] my-6" />
 
           {/* Nav Links */}
-          <nav className="flex flex-col space-y-2">
+          <nav className="flex flex-col">
             <SidebarLink to="/" icon={FiHome} label="Home" />
             <SidebarLink to="/schedule" icon={FiCalendar} label="Schedule" />
             <SidebarLink
@@ -48,7 +48,7 @@ function Sidebar() {
 
           {/* Bottom Section */}
 
-          <div className="flex flex-col space-y-2 mt-12">
+          <div className="flex flex-col mt-12">
             <SidebarLink to="/settings" icon={FiSettings} label="Settings" />
             <SidebarLink to="/logout" icon={FiLogOut} label="Log Out" />
           </div>

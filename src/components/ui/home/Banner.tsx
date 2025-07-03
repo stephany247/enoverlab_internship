@@ -2,7 +2,7 @@ import { assets } from "../../../assets/assets";
 
 function Banner() {
   return (
-    <div className="relative bg-blue-banner grid grid-cols-3 rounded-4xl p-6">
+    <div className="relative hidden bg-blue-banner md:grid grid-cols-3 rounded-3xl p-6">
       <div className="col-span-2 flex flex-col justify-between gap-12">
         <div className="">
           <h2 className="text-2xl text-white">
@@ -21,7 +21,7 @@ function Banner() {
       <img
         src={assets.bannerImage}
         alt="Choose a plan"
-        className="h-70 absolute right-0 -bottom-4"
+        className="h-70 absolute right-2 -bottom-4"
       />
     </div>
   );

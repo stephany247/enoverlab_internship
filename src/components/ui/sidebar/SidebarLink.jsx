@@ -8,7 +8,7 @@ const SidebarLink = ({ to, icon: Icon, label }) => (
         className={`p-4 w-full flex items-center gap-4 group transition-colors duration-300 ease-in-out ${
           isActive
             ? "text-blue font-medium bg-[#E6ECF9]"
-            : "text-gray-text hover:text-blue"
+            : "text-gray-text hover:text-blue hover:bg-light-blue/10"
         }`}
       >
         <Icon
