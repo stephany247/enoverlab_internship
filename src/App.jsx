@@ -7,18 +7,10 @@ import Logout from "./pages/Logout";
 import Settings from "./pages/Settings";
 import SmartHome from "./pages/SmartHome";
 import EmergencyContact from "./pages/EmergencyContact";
-import {
-  FiHome,
-  FiCalendar,
-  FiPhone,
-  FiMonitor,
-  FiMusic,
-  FiSettings,
-  FiLogOut,
-  FiSmartphone,
-} from "react-icons/fi";
 import Header from "./components/ui/header/Header";
 import Sidebar from "./components/ui/sidebar/Sidebar";
+import 'leaflet/dist/leaflet.css';
+
 
 // // Reusable Sidebar Link Component
 // const SidebarLink = ({ to, icon: Icon, label }) => (

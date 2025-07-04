@@ -1,15 +1,8 @@
 import { GoPlusCircle } from "react-icons/go";
-import { assets } from "../../../assets/assets";
 import { FaPhone } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
+import { contacts } from "../../../utils/contacts";
 
-const contacts = [
-  { name: "Amanda Ryan", image: assets.amanda },
-  { name: "Pelumi Royan", image: assets.pelumi },
-  { name: "Joseph Kluvert", image: assets.joseph },
-  { name: "Tosin Abdul", image: assets.tosin },
-  { name: "Anna Smith", image: assets.anna },
-];
 
 function ContactBanner() {
   return (

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap");
 @import "tailwindcss";
 
+
 @theme {
   /* COLORS */
   --color-global-gray: oklch(0.72 0.11 178);
@@ -21,6 +22,10 @@
   --color-light-pink-border: #ffead9;
   --color-light-blue-card: #eaeeff;
   --color-light-blue-border: #dbe1fb;
+
+  --color-contact-blue: #879AED;
+  --color-contact-green: #5CBCD0;
+  --color-contact-orange: #EABE97;
 
   /* FONT */
   --font-sen: "Sen", "sans-serif";
