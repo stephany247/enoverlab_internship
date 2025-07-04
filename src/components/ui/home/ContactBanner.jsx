@@ -22,9 +22,9 @@ function ContactBanner() {
       </div>
 
       {/* Contacts */}
-      <div className="flex gap-4 overflow-x-auto flex-nowrap no-scrollbar pb-2 w-full scroll-snap-x">
+      <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
         {/* New contact button */}
-        <button className="flex flex-col items-center justify-center gap-2 text-dark-gray-text font-medium text-sm border border-light-gray p-4 rounded-2xl hover:underline w-36 md:w-full lg:min-w-48 flex-shrink-0">
+        <button className="flex flex-col items-center justify-center gap-2 text-dark-gray-text font-medium text-sm border border-light-gray p-4 rounded-2xl hover:underline w-36 lg:min-w-48 flex-shrink-0">
           <GoPlusCircle className="w-12 h-12 lg:w-16 lg:h-16 text-blue" />
           Set a new emergency contact
         </button>
