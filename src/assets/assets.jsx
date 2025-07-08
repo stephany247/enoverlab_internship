@@ -8,6 +8,7 @@ import pelumi from "./pelumi-royan.png";
 import joseph from "./joseph-gonzalez.png";
 import tosin from "./tosin-abdul.png";
 import anna from "./anna-smith.png";
+import schedule from "./schedule.svg";
 
 export const assets = {
   logo,
@@ -20,4 +21,5 @@ export const assets = {
   joseph,
   tosin,
   anna,
+  schedule
 };

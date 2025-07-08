@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap");
 @import "tailwindcss";
 
-
 @theme {
   /* COLORS */
   --color-global-gray: oklch(0.72 0.11 178);
@@ -10,6 +9,7 @@
   --color-blue: #013bc0;
   --color-light-blue: #c7d4f1;
 
+  --color-lighter-gray: #ededed;
   --color-light-gray: #c5c5c5;
   --color-dark-gray: #666666;
   --color-darker-gray: #414141;
@@ -23,9 +23,17 @@
   --color-light-blue-card: #eaeeff;
   --color-light-blue-border: #dbe1fb;
 
-  --color-contact-blue: #879AED;
-  --color-contact-green: #5CBCD0;
-  --color-contact-orange: #EABE97;
+  --color-contact-blue: #879aed;
+  --color-contact-green: #5cbcd0;
+  --color-contact-orange: #eabe97;
+
+  --color-task-green: #e3faff;
+  --color-task-red: #fff5ec;
+  --color-icon-green: #c6f5ff;
+  --color-icon-blue: #d0d9ff;
+  --color-icon-red: #ffe5ce;
+
+  --color-lighter-green: #d4f4fb;
 
   /* FONT */
   --font-sen: "Sen", "sans-serif";

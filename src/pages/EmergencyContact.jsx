@@ -18,7 +18,7 @@ export default function EmergencyContact() {
   };
 
   return (
-    <div className="p-6 md:p-0">
+    <div className="p-4 md:p-0">
       {/* Header */}
       <h2 className="text-lg font-semibold text-blue mb-4">
         Stay connected <span className="text-black">and get</span> help fast

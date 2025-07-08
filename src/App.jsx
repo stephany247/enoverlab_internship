@@ -36,7 +36,7 @@ import 'leaflet/dist/leaflet.css';
 
 export default function App() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-x-6 p-4">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-x-6 p-6">
       {/* Sidebar */}
       <Sidebar />
 
