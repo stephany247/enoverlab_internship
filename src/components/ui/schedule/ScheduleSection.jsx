@@ -20,7 +20,7 @@ function ScheduleSection({ title, items }) {
                 <Icon />
               </div>
               <div className="flex flex-col gap-2">
-                <h4>{item.name}</h4>
+                <h4 className="text-nowrap">{item.name}</h4>
                 <p className="text-xs text-dark-gray">{item.details}</p>
               </div>
             </div>

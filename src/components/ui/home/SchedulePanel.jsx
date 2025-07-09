@@ -52,7 +52,7 @@ function ScheduleCard({ schedule, index }) {
   const isSecond = index === 1;
 
   const bgClass = isSecond
-    ? "bg-light-pink border-light-pink-border"
+    ? "hidden md:block bg-light-pink border-light-pink-border"
     : "bg-light-blue-card border-light-blue-border";
 
   return (

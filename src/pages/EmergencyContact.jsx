@@ -18,15 +18,15 @@ export default function EmergencyContact() {
   };
 
   return (
-    <div className="p-4 md:p-0">
+    <div className="py-8 md:py-0">
       {/* Header */}
-      <h2 className="text-lg font-semibold text-blue mb-4">
+      <h2 className="text-2xl font-semibold text-blue mb-4">
         Stay connected <span className="text-black">and get</span> help fast
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 border-b border-gray-200">
         {/* <div className="grid grid-cols-1 md:grid-cols-3"> */}
         <div className="col-span-2">
-          <div className="flex space-x-2 bg-white rounded-lg border-b border-light-gray">
+          <div className="flex space-x-2 bg-white rounded-lg">
             {tabs.map((tab) => (
               <button
                 key={tab.key}

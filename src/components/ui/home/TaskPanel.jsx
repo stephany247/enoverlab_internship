@@ -83,7 +83,7 @@ export default function TaskPanel() {
             <span
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`cursor-pointer h-1.5 rounded-sm ${
+              className={`cursor-pointer h-1 rounded-sm ${
                 currentIndex === idx ? "w-8 bg-blue" : "w-4 bg-gray-300"
               }`}
             ></span>

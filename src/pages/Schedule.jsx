@@ -1,68 +1,15 @@
 import { GoPlusCircle } from "react-icons/go";
 import { assets } from "../assets/assets";
-import { MdOutlineWaterDrop } from "react-icons/md";
-import { GiBottledBolt } from "react-icons/gi";
-import { BsCapsulePill } from "react-icons/bs";
-import { CiDumbbell } from "react-icons/ci";
 import ScheduleSection from "../components/ui/schedule/ScheduleSection";
 import { todaySchedule, tomorrowSchedule } from "../utils/schedule";
 import CalendarSchedule from "../components/ui/schedule/CalendarSchedule";
 
-// const todaySchedule = [
-//   {
-//     id: 1,
-//     icon: <MdOutlineWaterDrop />,
-//     name: "Water",
-//     details: "1 cup",
-//     time: "12:00 am",
-//   },
-//   {
-//     id: 2,
-//     icon: <GiBottledBolt />,
-//     name: "Vitamins",
-//     details: "2 Pills",
-//     time: "02:30 pm",
-//   },
-//   {
-//     id: 3,
-//     icon: <BsCapsulePill />,
-//     name: "Anti Biotics",
-//     details: "2 Pills",
-//     time: "04:00 pm",
-//   },
-//   // Add more items
-// ];
-// const tomorrowSchedule = [
-//   {
-//     id: 1,
-//     icon: <MdOutlineWaterDrop />,
-//     name: "Water",
-//     details: "1 cup",
-//     time: "12:00 am",
-//   },
-//   {
-//     id: 2,
-//     icon: <CiDumbbell />,
-//     name: "Exercise",
-//     details: "30 minutes",
-//     time: "02:30 pm",
-//   },
-//   {
-//     id: 3,
-//     icon: <BsCapsulePill />,
-//     name: "Anti Biotics",
-//     details: "2 Pills",
-//     time: "04:00 pm",
-//   },
-//   // Add more items
-// ];
-
 export default function Schedule() {
   return (
-    <main className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-x-8">
+    <main className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-x-8 py-8 md:py-0">
       <div className="col-span-2 space-y-4">
         {/* Header */}
-        <h2 className="text-xl text-balance font-semibold w-8/10">
+        <h2 className="text-2xl text-balance font-semibold w-8/10">
           Stay <span className="text-blue"> healthy & stay on</span> schedule
         </h2>
         <div className="space-y-4">
@@ -75,7 +22,7 @@ export default function Schedule() {
             <img src={assets.schedule} className="w-50 sm:w-64 h-auto" />
           </div>
           {/* Schedule Sections */}
-          <section className="space-y-4 bg-white rounded-3xl md:p-4 lg:p-6 ">
+          <section className="space-y-4 bg-white rounded-3xl md:p-4 lg:p-6">
             <ScheduleSection title="Today" items={todaySchedule} />
             <ScheduleSection title="Tomorrow" items={tomorrowSchedule} />
           </section>
