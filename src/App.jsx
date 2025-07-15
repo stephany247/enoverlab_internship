@@ -1,5 +1,4 @@
-import { NavLink, Routes, Route } from "react-router-dom";
-import { assets } from "./assets/assets";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Schedule from "./pages/Schedule";
 import Entertainment from "./pages/Entertainment";
@@ -7,51 +6,19 @@ import Logout from "./pages/Logout";
 import Settings from "./pages/Settings";
 import SmartHome from "./pages/SmartHome";
 import EmergencyContact from "./pages/EmergencyContact";
-import {
-  FiHome,
-  FiCalendar,
-  FiPhone,
-  FiMonitor,
-  FiMusic,
-  FiSettings,
-  FiLogOut,
-  FiSmartphone,
-} from "react-icons/fi";
-import Header from "./components/ui/header/Header";
 import Sidebar from "./components/ui/sidebar/Sidebar";
-
-// // Reusable Sidebar Link Component
-// const SidebarLink = ({ to, icon: Icon, label }) => (
-//   <NavLink to={to}>
-//     {({ isActive }) => (
-//       <div
-//         className={`p-4 w-full flex items-center gap-4 ${
-//           isActive
-//             ? "text-[#013BC0] font-medium bg-[#E6ECF9]"
-//             : "text-[#666666] hover:text-[#013BC0]"
-//         }`}
-//       >
-//         <Icon
-//           className={`w-5 h-5 ${
-//             isActive ? "text-[#013BC0]" : "text-gray-[#666666]"
-//           }`}
-//         />
-//         <p>{label}</p>
-//       </div>
-//     )}
-//   </NavLink>
-// );
+import 'leaflet/dist/leaflet.css';
+import DeskopHeader from "./components/ui/header/DesktopHeader";
 
 export default function App() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-x-6 p-4">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-x-6 p-6">
       {/* Sidebar */}
       <Sidebar />
 
-{/* >>>>>>> origin/main */}
       {/* Main Content */}
       <main className="col-span-3 space-y-4">
-        <Header />
+        <DeskopHeader />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/schedule" element={<Schedule />} />
