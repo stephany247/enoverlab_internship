@@ -8,6 +8,8 @@
   --color-primary: #eaeef0;
   --color-blue: #013bc0;
   --color-light-blue: #c7d4f1;
+  --color-blue-lavenda: #eaeeff;
+  --color-softLight-blue: #97abff;
 
   --color-lighter-gray: #ededed;
   --color-light-gray: #c5c5c5;
@@ -17,6 +19,9 @@
   --color-dark-gray-text: #818181;
   --color-blue-banner: #447dff;
   --color-task-card: #f6f6f6;
+  --color-gray-button: #d9d9d9;
+  --color-gray-text: #727272;
+  --color-medium-dark-gray: #5c5c5c;
 
   --color-light-pink: #fff5ec;
   --color-light-pink-border: #ffead9;
@@ -26,12 +31,16 @@
   --color-contact-blue: #879aed;
   --color-contact-green: #5cbcd0;
   --color-contact-orange: #eabe97;
+  --color-warmPitch-orange: #FFBE84;
+  --color-burnt-orange: #C96E1C;
 
   --color-task-green: #e3faff;
   --color-task-red: #fff5ec;
   --color-icon-green: #c6f5ff;
   --color-icon-blue: #d0d9ff;
   --color-icon-red: #ffe5ce;
+  --color-bright-cyan: #63E3FF;
+  --color-vibrant-cyan-blue:#19ABCB;
 
   --color-lighter-green: #d4f4fb;
 
