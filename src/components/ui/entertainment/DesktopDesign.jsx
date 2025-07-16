@@ -1,24 +1,3 @@
-/**
- * DesktopDesign Component
- *
- * This component renders the desktop layout of an entertainment dashboard UI.
- * 
- * Features:
- * - A main content area with:
- *    • Header title
- *    • Navigation buttons to switch between media types (All, Movies, Music, etc.)
- *    • Sections for:
- *        - Continue Watching
- *        - Your Next Watch
- *        - Top 10 TV Shows in Nigeria (horizontal scroll)
- * 
- * - A sidebar (visible only on desktop) with filters for:
- *    • Latest status (Trending, Coming Soon, Download)
- *    • Categories (Action, Horror, Comedy, Sci-fi, etc.)
- * 
- * Tailwind CSS is used for styling, including responsive grid/flex layouts and hover/active states.
- */
-
 import React, { useState } from "react";
 import sheldonImg from "../../../assets/sheldonImg.png";
 import adolescentImg from "../../../assets/adolescentImg.png";
@@ -35,7 +14,14 @@ const sceneImages = [sheldonImg, adolescentImg, houseGuradImg, kravenImg];
 const nextWatch = [TaleImg, adamImg, anasiImg, africaImg];
 const topShows = [TaleImg, adamImg, adolescentImg, houseGuradImg, kravenImg];
 const filterByLatest = ["Trending", "Comming Soon ", "Download"];
-const filterByCategories = ["Action", "Horror", "Comedy", "Sci-fi", "Thriller", "Fantasy"];
+const filterByCategories = [
+  "Action",
+  "Horror",
+  "Comedy",
+  "Sci-fi",
+  "Thriller",
+  "Fantasy",
+];
 
 const DesktopDesign = () => {
   const [active, setActive] = useState("All");

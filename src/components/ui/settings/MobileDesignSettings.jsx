@@ -52,7 +52,7 @@ export default function MobileDesignSettings() {
 
               {/* CTA Button */}
               <div className="flex items-center justify-center">
-                <button className="bg-blue text-white py-2 px-6 lg:py-3 lg:px-8 rounded-lg text-xs lg:text-sm cursor-pointer transition-all duration-300 hover:bg-blue/90">
+                <button className="bg-blue text-white py-2 px-6 lg:py-3 lg:px-8 rounded-lg text-xs lg:text-sm cursor-pointer transition-all duration-300 hover:bg-blue/80">
                   Start 7 Days Free Trial
                 </button>
               </div>
@@ -96,7 +96,7 @@ export default function MobileDesignSettings() {
 
               {/* CTA Button */}
               <div className="flex justify-center items-center">
-                <button className="bg-vibrant-cyan-blue p-2 lg:p-4 max-w-full w-[80%] text-xs lg:text-sm rounded-lg text-white hover:bg-bright-cyan hover:text-white transition duration-300 shadow">
+                <button className="bg-vibrant-cyan-blue p-2 lg:p-4 max-w-full w-[80%] text-xs lg:text-sm rounded-lg text-white hover:bg-bright-cyan hover:text-white transition duration-300 shadow cursor-pointer">
                   Start 14 Days Free Trial
                 </button>
               </div>
@@ -134,7 +134,7 @@ export default function MobileDesignSettings() {
 
               {/* CTA Button */}
               <div className="flex justify-center items-center">
-                <button className="bg-burnt-orange p-2 lg:p-4 max-w-full w-[80%] text-xs lg:text-sm rounded-lg text-white hover:bg-bright-cyan hover:text-white transition duration-300 shadow">
+                <button className="bg-burnt-orange p-2 lg:p-4 max-w-full w-[80%] text-xs lg:text-sm rounded-lg text-white hover:bg-burnt-orange/90 hover:text-white transition duration-300 shadow cursor-pointer">
                   Start 31 Days Free Trial
                 </button>
               </div>
