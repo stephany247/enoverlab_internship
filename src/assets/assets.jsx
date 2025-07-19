@@ -9,6 +9,9 @@ import joseph from "./joseph-gonzalez.png";
 import tosin from "./tosin-abdul.png";
 import anna from "./anna-smith.png";
 import schedule from "./schedule.svg";
+import ai_bot from "./ai_bot.png"
+import mobileCatImg from "./mobileCatImg.png"
+import giftImg from "./giftImg.png"
 
 export const assets = {
   logo,
@@ -21,5 +24,8 @@ export const assets = {
   joseph,
   tosin,
   anna,
-  schedule
+  schedule,
+  ai_bot,
+  mobileCatImg,
+  giftImg
 };
