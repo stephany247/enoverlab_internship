@@ -6,7 +6,6 @@ import theWaiter from "../../../assets/theWaiter.png";
 import oneNight from "../../../assets/oneNight.png";
 import NavList from "./NavList";
 
-
 const categoriesList = ["Latest", "coming Soon", "Download"];
 const movieCategories = [
   "All",
@@ -25,9 +24,9 @@ const recentlyWacthed = [
   { id: 5, img: theWaiter, text: "The Waiter" },
 ];
 
+const bars = [1, 2, 3];
+
 export default function MobileDesign() {
-
-
   return (
     <header className="space-y-4 md:hidden -mx-4 w-screen">
       {/* Top Header Row */}
@@ -56,7 +55,7 @@ export default function MobileDesign() {
       </div>
 
       {/* Navigation Tabs */}
-     <NavList />
+      <NavList />
 
       <MainMobile />
     </header>
@@ -68,6 +67,14 @@ function MainMobile() {
   const [activeMovieCategories, setActiveMovieCategories] = useState(
     movieCategories[0]
   );
+
+  const [activeBar, setActiveBar] = useState(0);
+
+  function handleBtnBar(index) {
+    console.log(index);
+    setActiveBar(index);
+  }
+
   return (
     <div>
       <div className="flex justify-between p-2 gap-2 bg-white shadow-lg text-xs rounded-lg mb-5 ">
@@ -83,16 +90,30 @@ function MainMobile() {
           </div>
         ))}
       </div>
-
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-3">
         <img src={assets.mobileCatImg} alt="cinema image" />
       </div>
-      <div className="flex justify-center overflow-x-auto whitespace-nowrap gap-2 bg-white shadow-lg text-xs rounded-lg mb-5 px-2 no-scrollbar">
+
+      <div className="flex justify-center gap-2 mb-4">
+        {bars.map((_, index) => (
+          <span
+            key={index}
+            onClick={() => handleBtnBar(index)}
+            className={`${
+              activeBar === index
+                ? "bg-blue h-0.5 w-8 block"
+                : " bg-black h-0.5 w-4 block"
+            }   `}
+          ></span>
+        ))}
+      </div>
+
+      <div className="flex justify-between overflow-x-auto whitespace-nowrap gap-2 bg-white shadow-lg text-xs rounded-lg mb-5  no-scrollbar">
         {movieCategories.map((item, index) => (
           <div
             key={index}
             onClick={() => setActiveMovieCategories(item)}
-            className={`min-w-max px-4 py-2 text-center cursor-pointer rounded-md transition-all duration-200 ${
+            className={`min-w-max  px-4 py-2 text-center cursor-pointer rounded-md transition-all duration-200 ${
               activeMovieCategories === item
                 ? "bg-blue text-white"
                 : "bg-gray-100 text-black"
@@ -102,7 +123,6 @@ function MainMobile() {
           </div>
         ))}
       </div>
-
       <div className="overflow-x-auto no-scrollbar mb-5 space-y-4">
         <h2 className="font-semibold text-sm">Recently Watched</h2>
         <div className="flex whitespace-nowrap gap-3 px-2">
@@ -111,7 +131,7 @@ function MainMobile() {
               <img
                 src={item.img}
                 alt={`item-${index}`}
-                className="h-24 w-full object-cover rounded-md"
+                className="h-36 w-full object-cover rounded-2xl"
               />
               <p>{item.text}</p>
             </div>

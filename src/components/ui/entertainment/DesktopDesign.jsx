@@ -8,11 +8,17 @@ import adamImg from "../../../assets/adamImg.png";
 import anasiImg from "../../../assets/anasiImg.png";
 import africaImg from "../../../assets/africaImg.png";
 
+import loveImg from "../../../assets/loveImg.png";
+import battleImg from "../../../assets/battleImg.png";
+import ajosope from "../../../assets/ajosope.png";
+import clear from "../../../assets/clear.png";
+import ghost from "../../../assets/ghost.png";
+
 const navList = ["All", "Movies", "Music", "Audiobooks", "Podcast", "Sports"];
 
-const sceneImages = [sheldonImg, adolescentImg, houseGuradImg, kravenImg];
+const sceneImages = [loveImg, battleImg, ajosope, clear];
 const nextWatch = [TaleImg, adamImg, anasiImg, africaImg];
-const topShows = [TaleImg, adamImg, adolescentImg, houseGuradImg, kravenImg];
+const topShows = [TaleImg, adamImg, anasiImg];
 const filterByLatest = ["Trending", "Comming Soon ", "Download"];
 const filterByCategories = [
   "Action",
@@ -20,7 +26,7 @@ const filterByCategories = [
   "Comedy",
   "Sci-fi",
   "Thriller",
-  "Fantasy",
+  "Fantasy ",
 ];
 
 const DesktopDesign = () => {
@@ -61,17 +67,19 @@ const DesktopDesign = () => {
         <div className="bg-white rounded-2xl">
           {/* Scene Section */}
           <section className="bg-white py-4 px-5 rounded-2xl shadow-sm">
-            <h2 className="text-xl font-bold mb-4">Continue Watching</h2>
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <h2 className="lg:text-xl md:text-sm font-extrabold mb-5 md:mb-0 lg:mb-4">
+              Continue Watching
+            </h2>
+            <div className="overflow-x-auto md:grid md:grid-cols-4 md:gap-10 lg:gap-4 no-scrollbar mt-4">
               {sceneImages.map((scene, idx) => (
                 <div
                   key={idx}
-                  className="w-full h-40 md:h-56 lg:h-64 overflow-hidden rounded-xl"
+                  className="md:w-20 lg:w-full h-40  lg:h-full  rounded-xl"
                 >
                   <img
                     src={scene}
                     alt={`scene-${idx}`}
-                    className="w-full h-full object-cover rounded-xl cursor-pointer"
+                    className="w-full h-full object-contain rounded-xl cursor-pointer"
                   />
                 </div>
               ))}
@@ -80,17 +88,19 @@ const DesktopDesign = () => {
 
           {/* Devices */}
           <section className="bg-white py-4 px-5 rounded-2xl shadow-sm">
-            <h2 className="text-xl font-bold mb-4">Your Next Watch</h2>
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <h2 className="lg:text-xl md:text-sm font-extrabold mb-4">
+              Your Next Watch
+            </h2>
+            <div className="overflow-x-auto md:grid md:grid-cols-4 md:gap-20 lg:gap-4 no-scrollbar mt-4">
               {nextWatch.map((scene, idx) => (
                 <div
                   key={idx}
-                  className="w-full h-40 md:h-56 lg:h-64 overflow-hidden rounded-xl"
+                  className="md:w-24 lg:w-full h-40  lg:h-full  rounded-xl "
                 >
                   <img
                     src={scene}
                     alt={`scene-${idx}`}
-                    className="w-full h-full object-cover rounded-xl cursor-pointer"
+                    className="w-full h-full object-contain rounded-xl cursor-pointer"
                   />
                 </div>
               ))}
@@ -99,20 +109,13 @@ const DesktopDesign = () => {
 
           {/* Top Shows Section */}
           <section className="bg-white py-4 px-5 rounded-2xl shadow-sm">
-            <h2 className="text-xl font-bold mb-4">
+            <h2 className="lg:text-xl md:text-sm font-extrabold mb-4">
               Top 10 TV Shows in Nigeria Today
             </h2>
-            <div className="flex gap-4 overflow-x-auto no-scrollbar">
+            <div className=" flex justify-center md:space-x-4 xl:space-x-10 overflow-y-auto no-scrollbar xl:h-34 md:h-14">
               {topShows.map((scene, idx) => (
-                <div
-                  key={idx}
-                  className="min-w-[150px] sm:min-w-[200px] md:min-w-[240px] h-40 md:h-56 lg:h-64 flex-shrink-0 overflow-hidden rounded-xl"
-                >
-                  <img
-                    src={scene}
-                    alt={`scene-${idx}`}
-                    className="w-[100%] h-full object-cover rounded-xl cursor-pointer"
-                  />
+                <div key={idx} className="">
+                  <img src={scene} alt={`scene-${idx}`} className="" />
                 </div>
               ))}
             </div>
