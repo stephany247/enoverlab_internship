@@ -40,7 +40,11 @@ export default function MobileDesignSettings() {
                 "1 Smart Home device connection",
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-2">
-                  <IoMdCheckmark className="text-softLight-blue w-5 h-5" />
+                  {/* <IoMdCheckmark className="text-softLight-blue w-5 h-5" /> */}
+                  <span className="w-5 h-5 flex items-center justify-center shrink-0">
+                    <IoMdCheckmark className="text-softLight-blue w-5 h-5" />
+                  </span>
+
                   <p className="text-xs md:text-sm">{feature}</p>
                 </li>
               ))}
@@ -79,7 +83,11 @@ export default function MobileDesignSettings() {
                 "Offline entertainment downloads",
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-2">
-                  <IoMdJet className="text-bright-cyan w-5 h-5" />
+                  {/* <IoMdJet className="text-bright-cyan w-5 h-5" /> */}
+                  <span className="w-5 h-5 flex items-center justify-center shrink-0">
+                    <IoMdJet className="text-bright-cyan w-5 h-5" />
+                  </span>
+
                   <p className="text-xs md:text-sm">{feature}</p>
                 </li>
               ))}
@@ -110,7 +118,9 @@ export default function MobileDesignSettings() {
                 "VIP early access to features & exclusive workshops",
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-2">
-                  <IoStarSharp className="text-warmPitch-orange w-5 h-5" />
+                  <span className="w-5 h-5 flex items-center justify-center shrink-0">
+                    <IoStarSharp className="text-warmPitch-orange w-5 h-5" />
+                  </span>
                   <p className="text-xs md:text-sm">{feature}</p>
                 </li>
               ))}
