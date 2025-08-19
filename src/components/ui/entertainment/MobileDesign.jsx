@@ -19,9 +19,9 @@ const movieCategories = [
 const recentlyWacthed = [
   { id: 1, img: blackAdam, text: "Black Adam" },
   { id: 2, img: theWaiter, text: "The Waiter" },
+  { id: 3, img: oneNight, text: "One Night" },
   { id: 4, img: blackAdam, text: "Black Adam" },
   { id: 5, img: theWaiter, text: "The Waiter" },
-  { id: 6, img: theWaiter, text: "The Waiter" },
 ];
 
 const bars = [1, 2, 3];
@@ -42,7 +42,7 @@ export default function MobileDesign() {
       </div>
 
       {/* Search Bar */}
-      <div className="flex justify-between items-center shadow mb-4 p-3 rounded-lg bg-white mx-4">
+      <div className="flex justify-between items-center shadow-lg p-3 rounded-lg bg-white mx-4">
         <div className="flex items-center gap-2 flex-1">
           <img src={assets.ai_bot} alt="AI Bot" className="h-5 w-5" />
           <input
@@ -67,6 +67,7 @@ function MainMobile() {
   const [activeMovieCategories, setActiveMovieCategories] = useState(
     movieCategories[0]
   );
+
   const [activeBar, setActiveBar] = useState(0);
 
   function handleBtnBar(index) {
@@ -76,8 +77,7 @@ function MainMobile() {
 
   return (
     <div>
-      {/* Category Tabs */}
-      <div className="flex justify-between p-2 gap-2 bg-white shadow text-xs rounded-lg mb-5 ">
+      <div className="flex justify-between p-2 gap-2 bg-white shadow-lg text-xs rounded-lg mb-5 ">
         {categoriesList.map((item, index) => (
           <div
             key={index}
@@ -90,17 +90,10 @@ function MainMobile() {
           </div>
         ))}
       </div>
-
-      {/* Banner Image */}
-      <div className="flex justify-center md:justify-evenly mb-3">
-        <img
-          src={assets.mobileCatImg}
-          className="object-cover"
-          alt="cinema image"
-        />
+      <div className="flex justify-center mb-3">
+        <img src={assets.mobileCatImg} alt="cinema image" />
       </div>
 
-      {/* Dots / Bars */}
       <div className="flex justify-center gap-2 mb-4">
         {bars.map((_, index) => (
           <span
@@ -110,37 +103,31 @@ function MainMobile() {
               activeBar === index
                 ? "bg-blue h-0.5 w-8 block"
                 : " bg-black h-0.5 w-4 block"
-            }`}
+            }   `}
           ></span>
         ))}
       </div>
 
-      {/* Movie Category Tabs */}
-      <div className="flex justify-between overflow-x-auto whitespace-nowrap gap-2 bg-white shadow text-xs rounded-lg mb-5  no-scrollbar p-3">
+      <div className="flex justify-between overflow-x-auto whitespace-nowrap gap-2 bg-white shadow-lg text-xs rounded-lg mb-5  no-scrollbar">
         {movieCategories.map((item, index) => (
           <div
             key={index}
             onClick={() => setActiveMovieCategories(item)}
-            className={`min-w-max  p-2 text-center cursor-pointer rounded-md transition-all duration-200 ${
+            className={`min-w-max  px-4 py-2 text-center cursor-pointer rounded-md transition-all duration-200 ${
               activeMovieCategories === item
                 ? "bg-blue text-white"
-                : " text-black"
+                : "bg-gray-100 text-black"
             }`}
           >
             {item}
           </div>
         ))}
       </div>
-
-      {/* Recently Watched Carousel */}
-      {/* <div className="overflow-x-auto no-scrollbar mb-5 space-y-4">
+      <div className="overflow-x-auto no-scrollbar mb-5 space-y-4">
         <h2 className="font-semibold text-sm">Recently Watched</h2>
-        <div className="flex flex-cols items-center gap-2  p-4 rounded-xl  min-w-36 lg:min-w-48 flex-shrink-0">
+        <div className="flex whitespace-nowrap gap-3 px-2">
           {recentlyWacthed.map((item, index) => (
-            <div
-              key={item.id}
-              className="min-w-[120px] md:min-w-[50%] space-y-3"
-            >
+            <div key={item.id} className="min-w-[120px] space-y-3">
               <img
                 src={item.img}
                 alt={`item-${index}`}
@@ -150,35 +137,7 @@ function MainMobile() {
             </div>
           ))}
         </div>
-      </div> */}
-
-      <section className="bg-white md:p-6 md:rounded-3xl md:shadow-sm space-y-4">
-        {/* Header */}
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-semibold text-darker-gray">
-            Emergency Contact
-          </h1>
-        </div>
-
-        {/* Contacts */}
-        <div className="flex gap-1 overflow-x-auto no-scrollbar pb-2">
-          {recentlyWacthed.map((watch, index) => {
-            return (
-              <div
-                key={index}
-                className="flex flex-col items-center space-y-1 px-2 py-3 text-dark-gray min-w-28 lg:min-w-40 flex-shrink-0"
-              >
-                <img
-                  src={watch.img}
-                  alt={`profile`}
-                  className="object-cover rounded-md"
-                />
-                <h2 className="text-sm font-medium">{watch.text}</h2>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function MobileDesignSettings() {
       {/* Welcome section */}
       <section className=" space-y-1">
         <h1 className="text-xl font-semibold">
-          Welcome to <span className="text-blue">jermai</span>
+          Welcome to <span className="text-blue">Jermai</span>
         </h1>
         <p className="text-lg">One app, All your life essentials</p>
       </section>
@@ -65,7 +65,7 @@ export default function MobileDesignSettings() {
           <div className="bg-task-green w-full  p-4   border-gray-200 rounded-2xl shadow-md sm:p-6 md:p-8 flex flex-col justify-between ">
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="font-semibold text-lg md:text-xlg">Pro</h3>
+                <h3 className="font-semibold text-lg md:text-xl">Pro</h3>
                 <p className="mt-1">
                   <span className="font-extrabold text-xl md:text-2xl">
                     ₦5000
@@ -107,7 +107,7 @@ export default function MobileDesignSettings() {
           {/* === Elite Plan === */}
           <div className="bg-light-pink w-full p-4  border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 flex flex-col justify-betwee">
             <div>
-              <h3 className="font-semibold text-lg">Elite</h3>
+              <h3 className="font-semibold text-xl">Elite</h3>
               <p>
                 <span className="font-bold text-xl">₦12000</span>
                 <span className="text-gray-500 text-sm font-thin">/month</span>
