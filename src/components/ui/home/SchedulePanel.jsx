@@ -27,7 +27,7 @@ function SchedulePanel() {
           Upcoming Schedule
         </h1>
         <a
-          href="#"
+          href="/schedule"
           className="flex items-center text-dark-gray-text hover:underline text-sm"
         >
           View All <FiChevronRight />
@@ -52,7 +52,7 @@ function ScheduleCard({ schedule, index }) {
   const isSecond = index === 1;
 
   const bgClass = isSecond
-    ? "hidden md:block bg-light-pink border-light-pink-border"
+    ? "hidden md:flex bg-light-pink border-light-pink-border"
     : "bg-light-blue-card border-light-blue-border";
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FiChevronRight } from "react-icons/fi";
 import { GoPlusCircle } from "react-icons/go";
 
@@ -32,11 +32,14 @@ const tasks = [
 export default function TaskPanel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1024);
-      setCurrentIndex(0); // Reset index on resize for clean behavior
+      setCurrentIndex(0);
+      if (scrollRef.current)
+        scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -48,6 +51,26 @@ export default function TaskPanel() {
     slides.push(tasks.slice(i, i + cardsPerSlide));
   }
 
+  // When user scrolls, figure out which "page" we're on
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const scrollLeft = scrollRef.current.scrollLeft;
+    const slideWidth = scrollRef.current.clientWidth;
+    const index = Math.round(scrollLeft / slideWidth);
+    setCurrentIndex(index);
+  };
+
+  // Scroll to slide when marker is clicked
+  const scrollToSlide = (idx) => {
+    if (!scrollRef.current) return;
+    const slideWidth = scrollRef.current.clientWidth;
+    scrollRef.current.scrollTo({
+      left: idx * slideWidth,
+      behavior: "smooth",
+    });
+    setCurrentIndex(idx);
+  };
+
   return (
     <section className="bg-white md:p-4 md:rounded-3xl md:shadow-sm space-y-6">
       <div className="flex justify-between items-center">
@@ -55,34 +78,50 @@ export default function TaskPanel() {
           Daily Task and Medication
         </h1>
         <a
-          href="#"
+          href="/schedule"
           className="flex items-center text-dark-gray-text hover:underline text-sm"
         >
           View All <FiChevronRight />
         </a>
       </div>
 
-      <div className="relative w-full flex flex-col items-center gap-4 pb-2 md:pb-16">
+      <div className="relative w-full flex md:flex-col items-center gap-4 pb-2 md:pb-16">
+        {/* Desktop "Add reminder" button */}
         <button className="hidden md:flex flex-col items-center justify-center gap-2 text-dark-gray-text font-medium text-sm hover:underline min-w-20">
           <GoPlusCircle className="w-12 lg:w-20 h-12 lg:h-20 text-blue" />
           Set a new reminder
         </button>
 
-        <div className="flex gap-4 transition-all duration-500 ease-in-out w-full justify-center">
-          <button className="flex md:hidden flex-col items-center justify-center gap-2 text-dark-gray-text font-medium text-sm hover:underline min-w-20 w-4/10">
-            <GoPlusCircle className="w-12 lg:w-20 h-12 lg:h-20 text-blue" />
-            Set a new reminder
-          </button>
-          {slides[currentIndex].map((task, idx) => (
-            <TaskCard key={idx} task={task} />
+        {/* Mobile "Add reminder" button – outside the scroll area */}
+        <button className="flex md:hidden flex-col items-center justify-center gap-2 text-dark-gray-text font-medium text-sm hover:underline min-w-20 w-4/10">
+          <GoPlusCircle className="w-12 h-12 text-blue" />
+          Set a new reminder
+        </button>
+
+        {/* Scrollable container */}
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth w-full no-scrollbar"
+        >
+          {slides.map((group, idx) => (
+            <div
+              key={idx}
+              className="flex-shrink-0 w-full flex gap-4 justify-center snap-start"
+            >
+              {group.map((task, tIdx) => (
+                <TaskCard key={tIdx} task={task} />
+              ))}
+            </div>
           ))}
         </div>
 
+        {/* Carousel markers */}
         <div className="absolute -bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
           {slides.map((_, idx) => (
             <span
               key={idx}
-              onClick={() => setCurrentIndex(idx)}
+              onClick={() => scrollToSlide(idx)}
               className={`cursor-pointer h-1 rounded-sm ${
                 currentIndex === idx ? "w-8 bg-blue" : "w-4 bg-gray-300"
               }`}
