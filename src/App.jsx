@@ -17,7 +17,7 @@ export default function App() {
       <Sidebar />
 
       {/* Main Content */}
-      <main className="col-span-3 space-y-4">
+      <main className="col-span-3 space-y-4 ">
         <DeskopHeader />
         <Routes>
           <Route path="/" element={<Home />} />

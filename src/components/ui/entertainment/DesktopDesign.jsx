@@ -35,7 +35,7 @@ const DesktopDesign = () => {
   const [activeCategories, setActiveCategories] = useState("Action");
 
   return (
-    <main className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-x-10 py-8 px-4 ">
+    <main className="hidden md:grid  md:grid-cols-3 gap-x-4 py-8">
       {/* Main Content */}
       <div className="col-span-2 space-y-6">
         {/* Heading */}
