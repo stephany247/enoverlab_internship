@@ -65,7 +65,7 @@ export default function EmergencyContact() {
                             src={contact.image}
                             className="w-14 h-14 rounded-full "
                           />
-                          <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></div>
+                          {/* <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></div> */}
                         </div>
                         <span className="font-medium text-lg">
                           {contact.name}

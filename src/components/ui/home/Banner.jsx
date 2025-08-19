@@ -13,7 +13,7 @@ function Banner() {
             journey today — it's worth it.
           </p>
         </div>
-        <a className="bg-white text-darker-gray p-2 rounded-xl w-fit">
+        <a href="/settings" className="bg-white text-darker-gray p-2 rounded-xl w-fit">
           Choose Your Plan
         </a>
       </div>
