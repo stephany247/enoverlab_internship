@@ -87,13 +87,13 @@ export default function TaskPanel() {
 
       <div className="relative w-full flex md:flex-col items-center gap-4 pb-2 md:pb-16">
         {/* Desktop "Add reminder" button */}
-        <button className="hidden md:flex flex-col items-center justify-center gap-2 text-dark-gray-text font-medium text-sm hover:underline min-w-20">
+        <button className="hidden md:flex flex-col items-center justify-center gap-2 text-dark-gray-text font-medium text-sm hover:underline min-w-20 cursor-pointer">
           <GoPlusCircle className="w-12 lg:w-20 h-12 lg:h-20 text-blue" />
           Set a new reminder
         </button>
 
         {/* Mobile "Add reminder" button – outside the scroll area */}
-        <button className="flex md:hidden flex-col items-center justify-center gap-2 text-dark-gray-text font-medium text-sm hover:underline min-w-20 w-4/10">
+        <button className="flex md:hidden flex-col items-center justify-center gap-2 text-dark-gray-text font-medium text-sm hover:underline min-w-20 w-4/10 cursor-pointer">
           <GoPlusCircle className="w-12 h-12 text-blue" />
           Set a new reminder
         </button>

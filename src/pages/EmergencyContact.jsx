@@ -71,7 +71,7 @@ export default function EmergencyContact() {
                           {contact.name}
                         </span>
                       </div>
-                      <button className="text-dark-gray hover:text-gray-600">
+                      <button className="text-dark-gray hover:text-gray-600 cursor-pointer">
                         <FaEllipsisV />
                       </button>
                     </div>
@@ -99,10 +99,10 @@ export default function EmergencyContact() {
           <HospitalMap hospital={nearestHospital} />
 
           <div className="flex flex-col space-y-4 p-4">
-            <button className="flex-1 bg-blue text-white py-4 md:py-2 px-4 rounded-full text-sm font-medium hover:bg-blue/80 transition-colors">
+            <button className="flex-1 bg-blue text-white py-4 md:py-2 px-4 rounded-full text-sm font-medium hover:bg-blue/80 transition-colors cursor-pointer">
               Find Nearby Hospital
             </button>
-            <button className="py-4 md:py-2 px-4 border border-blue rounded-full text-sm font-medium hover:bg-light-gray/20 transition-colors">
+            <button className="py-4 md:py-2 px-4 border border-blue rounded-full text-sm font-medium hover:bg-light-gray/20 transition-colors cursor-pointer">
               Call 112
             </button>
           </div>

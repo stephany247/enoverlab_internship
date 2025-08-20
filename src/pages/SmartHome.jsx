@@ -22,6 +22,7 @@ import { PiSunFill, PiTelevision } from "react-icons/pi";
 import { FaHouse, FaYoutube } from "react-icons/fa6";
 import { TbBeach } from "react-icons/tb";
 import { GiFlexibleLamp } from "react-icons/gi";
+import { useState } from "react";
 
 const SmartHome = () => {
   const stats = [
@@ -100,7 +101,7 @@ const SmartHome = () => {
     },
   ];
 
-  const devices = [
+  const [devices, setDevices] = useState([
     {
       name: "Lamps",
       count: "8 Devices",
@@ -128,7 +129,7 @@ const SmartHome = () => {
       iconColor: "text-[#EFC788]",
       isOn: false,
     },
-  ];
+  ]);
 
   const rooms = [
     {
@@ -156,6 +157,14 @@ const SmartHome = () => {
       textColor: "text-gray-800",
     },
   ];
+
+  const toggleDevice = (index) => {
+    setDevices((prev) =>
+      prev.map((device, i) =>
+        i === index ? { ...device, isOn: !device.isOn } : device
+      )
+    );
+  };
 
   return (
     <main className="grid grid-cols-1 md:grid-cols-3 gap-x-4 py-8">
@@ -255,7 +264,10 @@ const SmartHome = () => {
                   >
                     {device.icon}
                   </div>
-                  <div className="relative">
+                  <div
+                    className="relative cursor-pointer"
+                    onClick={() => toggleDevice(index)}
+                  >
                     <div
                       className={`w-12 h-6 rounded-full transition-colors ${
                         device.isOn ? "bg-blue-600" : "bg-gray-300"
@@ -278,7 +290,8 @@ const SmartHome = () => {
                     device.isOn ? "text-green-600" : "text-gray-500"
                   }`}
                 >
-                  <FaBolt className="text-yellow-700" /> {device.status}
+                  <FaBolt className="text-yellow-700" />{" "}
+                  {device.isOn ? "Consuming 8Kwh" : "Not Consuming"}
                 </div>
               </div>
             ))}
