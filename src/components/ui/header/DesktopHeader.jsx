@@ -25,7 +25,7 @@ function DeskopHeader() {
         <CiBellOn className="hidden md:block w-8 h-8 mr-4" />
         {/* Conditionally show the button if on schedule page */}
         {isSchedule && (
-          <a className="bg-blue text-white py-2 px-3 mr-2 rounded-full text-sm font-medium hover:bg-blue/80 transition">
+          <a className="hidden lg:block bg-blue text-white py-2 px-3 mr-2 rounded-full text-sm font-medium hover:bg-blue/80 transition">
             View Medication History
           </a>
         )}

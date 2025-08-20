@@ -6,7 +6,7 @@ import CalendarSchedule from "../components/ui/schedule/CalendarSchedule";
 
 export default function Schedule() {
   return (
-    <main className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-x-8 py-8 md:py-0">
+    <main className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-x-8 py-8 md:py-0">
       <div className="col-span-2 space-y-4">
         {/* Header */}
         <h2 className="text-2xl text-balance font-semibold w-8/10">

@@ -35,21 +35,24 @@ export default function MobileDesignSettings() {
               </p>
 
               {/* Features */}
-              <ul className="mt-4 mb-6 space-y-3">
-                {[
-                  "Medication tracking & reminders",
-                  "Appointment scheduling",
-                  "Emergency contacts list",
-                  "Basic entertainment access",
-                  "1 Smart Home device connection",
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <IoMdCheckmark className="text-softLight-blue w-5 h-5 flex-shrink-0" />
-                    <p className="text-sm md:text-lg">{feature}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="space-y-2 flex-1 mt-4">
+              {[
+                "Medication tracking & reminders",
+                "Appointment scheduling",
+                "Emergency contacts list",
+                "Basic entertainment access",
+                "1 Smart Home device connection",
+              ].map((feature, i) => (
+                <li key={i} className="flex items-center gap-2">
+                  {/* <IoMdCheckmark className="text-softLight-blue w-5 h-5" /> */}
+                  <span className="w-5 h-5 flex items-center justify-center shrink-0">
+                    <IoMdCheckmark className="text-softLight-blue w-5 h-5" />
+                  </span>
+
+                  <p className="text-xs md:text-sm">{feature}</p>
+                </li>
+              ))}
+            </ul>
 
             {/* CTA Button */}
             <div className="mt-auto">
@@ -91,8 +94,10 @@ export default function MobileDesignSettings() {
                 "Offline entertainment downloads",
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-2">
-                  <IoMdJet className="text-bright-cyan w-5 h-5 flex-shrink-0" />
-                  <p className="text-sm md:text-lg">{feature}</p>
+                  <span className="w-5 h-5 flex items-center justify-center shrink-0">
+                    <IoMdJet className="text-bright-cyan w-5 h-5" />
+                  </span>
+                  <p className="text-xs md:text-sm">{feature}</p>
                 </li>
               ))}
             </ul>
@@ -124,8 +129,11 @@ export default function MobileDesignSettings() {
                 "VIP early access to features & exclusive workshops",
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-2">
-                  <IoStarSharp className="text-warmPitch-orange w-5 h-5" />
-                  <p className="text-xs md:text-lg">{feature}</p>
+
+                  <span className="w-5 h-5 flex items-center justify-center shrink-0">
+                    <IoStarSharp className="text-warmPitch-orange w-5 h-5" />
+                  </span>
+                  <p className="text-xs md:text-sm">{feature}</p>
                 </li>
               ))}
             </ul>

@@ -192,7 +192,7 @@ const SmartHome = () => {
         </section>
 
         {/* Scene Section */}
-        <section className="md:bg-white md:py-3 md:px-6 rounded-2xl">
+        <section className="md:bg-white md:py-3 md:px-6 mt-8 rounded-2xl">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Scene</h2>
           <div className="grid grid-cols-7 gap-3">
             {scenes.map((scene, index) => (
@@ -205,7 +205,7 @@ const SmartHome = () => {
                 >
                   {scene.icon}
                 </div>
-                <div className="text-sm font-medium text-gray-700">
+                <div className="text-sm font-medium text-[#60739D]">
                   {scene.label}
                 </div>
               </div>
