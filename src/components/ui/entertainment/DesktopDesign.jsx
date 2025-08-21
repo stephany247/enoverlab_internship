@@ -7,18 +7,29 @@ import TaleImg from "../../../assets/TaleImg.png";
 import adamImg from "../../../assets/adamImg.png";
 import anasiImg from "../../../assets/anasiImg.png";
 import africaImg from "../../../assets/africaImg.png";
+import africaqueen from "../../../assets/africaqueen.png";
+import africaqueen2 from "../../../assets/africaqueen2.png";
+import africaqueen3 from "../../../assets/africaqueen3.png";
 
 import loveImg from "../../../assets/loveImg.png";
 import battleImg from "../../../assets/battleImg.png";
 import ajosope from "../../../assets/ajosope.png";
 import clear from "../../../assets/clear.png";
-import ghost from "../../../assets/ghost.png";
 
 const navList = ["All", "Movies", "Music", "Audiobooks", "Podcast", "Sports"];
 
 const sceneImages = [loveImg, battleImg, ajosope, clear];
 const nextWatch = [TaleImg, adamImg, anasiImg, africaImg];
-const topShows = [TaleImg, adamImg, anasiImg];
+const topShows = [
+  africaqueen,
+  africaqueen2,
+  africaqueen3,
+  battleImg,
+  ajosope,
+  clear,
+  anasiImg,
+  africaImg,
+];
 const filterByLatest = ["Trending", "Comming Soon ", "Download"];
 const filterByCategories = [
   "Action",
@@ -46,13 +57,13 @@ const DesktopDesign = () => {
         </section>
 
         {/* Nav Buttons */}
-        <section className="bg-white p-4 rounded-xl shadow-sm w-fit">
-          <div className="flex flex-wrap gap-3">
+        <section className="bg-white p-1 overflow-x-auto rounded-xl lg:w-fit">
+          <div className="flex lg:space-x-2">
             {navList.map((item, index) => (
               <button
                 key={index}
                 onClick={() => setActive(item)}
-                className={`p-2 text-sm rounded-md cursor-pointer transition-all ${
+                className={`p-2 text-xs lg:text-sm rounded-md cursor-pointer transition-all ${
                   active === item
                     ? "bg-blue text-white"
                     : " text-gray-700 hover:bg-blue/10"
@@ -66,11 +77,11 @@ const DesktopDesign = () => {
 
         <div className="bg-white rounded-2xl">
           {/* Scene Section */}
-          <section className="bg-white py-4 px-5 rounded-2xl shadow-sm">
-            <h2 className="lg:text-xl md:text-sm font-extrabold mb-5 md:mb-0 lg:mb-4">
+          <section className="bg-white py-4 px-5 rounded-2xl ">
+            <h2 className="lg:text-2xl md:text-sm font-bold mb-5 md:mb-0 lg:mb-4">
               Continue Watching
             </h2>
-            <div className="overflow-x-auto md:grid md:grid-cols-4 md:gap-10 lg:gap-4 no-scrollbar mt-4">
+            <div className="overflow-x-auto md:grid md:grid-cols-4 md:gap-10 lg:gap-4  no-scrollbar mt-4">
               {sceneImages.map((scene, idx) => (
                 <div
                   key={idx}
@@ -88,10 +99,10 @@ const DesktopDesign = () => {
 
           {/* Devices */}
           <section className="bg-white py-4 px-5 rounded-2xl shadow-sm">
-            <h2 className="lg:text-xl md:text-sm font-extrabold mb-4">
+            <h2 className="lg:text-2xl md:text-sm font-bold mb-4">
               Your Next Watch
             </h2>
-            <div className="overflow-x-auto md:grid md:grid-cols-4 md:gap-20 lg:gap-4 no-scrollbar mt-4">
+            <div className="overflow-x-auto md:grid md:grid-cols-4 md:gap-26 lg:gap-4 no-scrollbar mt-4">
               {nextWatch.map((scene, idx) => (
                 <div
                   key={idx}
@@ -108,14 +119,22 @@ const DesktopDesign = () => {
           </section>
 
           {/* Top Shows Section */}
-          <section className="bg-white py-4 px-5 rounded-2xl shadow-sm">
-            <h2 className="lg:text-xl md:text-sm font-extrabold mb-4">
+          <section className="bg-white py-4 px-5 rounded-2xl ">
+            <h2 className="lg:text-2xl md:text-sm font-bold mb-4">
               Top 10 TV Shows in Nigeria Today
             </h2>
-            <div className=" flex justify-center md:space-x-4 xl:space-x-10 overflow-y-auto no-scrollbar xl:h-34 md:h-14">
+
+            <div className="flex overflow-x-auto space-x-6 no-scrollbar md:ms-4 lg:ms-10">
               {topShows.map((scene, idx) => (
-                <div key={idx} className="">
-                  <img src={scene} alt={`scene-${idx}`} className="" />
+                <div
+                  key={idx}
+                  className="flex-shrink-0 w-40 h-40 lg:w-60 lg:h-60 rounded-xl"
+                >
+                  <img
+                    src={scene}
+                    alt={`scene-${idx}`}
+                    className="w-full h-full object-contain rounded-xl"
+                  />
                 </div>
               ))}
             </div>
@@ -125,7 +144,7 @@ const DesktopDesign = () => {
 
       {/* Sidebar (Desktop Only) */}
       <section className=" h-fit hidden md:block space-y-10">
-        <div className="flex bg-white rounded-2xl flex-col gap-4 p-6">
+        <div className="flex bg-white p-6 rounded-2xl flex-col space-y-2">
           {filterByLatest.map((item, idk) => {
             return (
               <div key={idk}>
@@ -134,7 +153,7 @@ const DesktopDesign = () => {
                     activeLatest === item
                       ? "bg-blue text-white"
                       : " text-black hover:bg-blue/10"
-                  } p-2 rounded-lg cursor-pointer text-xs`}
+                  } p-2 rounded-lg cursor-pointer text-sm`}
                   onClick={() => setActiveLatest(item)}
                 >
                   {item}
@@ -144,17 +163,20 @@ const DesktopDesign = () => {
           })}
         </div>
 
-        <div className="flex bg-white p-6 rounded-2xl flex-col gap-4">
-          <h2>Categories</h2>
+        <div className="flex bg-white p-6 rounded-2xl flex-col space-y-1">
+          <div className="mb-4">
+            <h2>Categories</h2>
+          </div>
+
           {filterByCategories.map((item, idk) => {
             return (
-              <div key={idk}>
+              <div key={idk} className="">
                 <button
-                  className={`${
+                  className={` ${
                     activeCategories === item
                       ? "bg-blue text-white"
                       : " text-black hover:bg-blue/10"
-                  } p-2 rounded-lg cursor-pointer text-xs`}
+                  } md:p-2 lg:p-2 rounded-lg cursor-pointer text-sm`}
                   onClick={() => setActiveCategories(item)}
                 >
                   {item}
