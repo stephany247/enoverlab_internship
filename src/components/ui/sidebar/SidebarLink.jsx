@@ -5,10 +5,10 @@ const SidebarLink = ({ to, icon: Icon, label }) => (
   <NavLink to={to}>
     {({ isActive }) => (
       <div
-        className={`p-4 w-full flex items-center gap-4 group transition-colors duration-300 ease-in-out font-medium shadow-sm md:shadow-none rounded-md md:rounded-none ${
+        className={`p-4 w-full flex items-center gap-4 group transition-colors duration-300 ease-in-out shadow-sm md:shadow-none rounded-md md:rounded-none ${
           isActive
-            ? "text-blue bg-[#E6ECF9]"
-            : "text-black md:text-gray-text hover:text-blue hover:bg-light-blue/10"
+            ? "text-blue font-medium bg-[#E6ECF9]"
+            : "text-black font-medium md:font-normal md:text-gray-text hover:text-blue hover:bg-light-blue/10"
         }`}
       >
         <Icon
