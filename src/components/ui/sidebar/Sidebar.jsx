@@ -10,6 +10,7 @@ import {
   FiLogOut,
   FiSmartphone,
 } from "react-icons/fi";
+import { FaMusic } from "react-icons/fa"
 
 function Sidebar() {
   return (
@@ -39,10 +40,11 @@ function Sidebar() {
               icon={FiSmartphone}
               label="Smart Home"
             />
+            
             <SidebarLink
               to="/entertainment"
               icon={FiMusic}
-              label="Entertainment"
+              label="Entertainments"
             />
           </nav>
 

@@ -18,19 +18,19 @@ import clear from "../../../assets/clear.png";
 
 const navList = ["All", "Movies", "Music", "Audiobooks", "Podcast", "Sports"];
 
-const sceneImages = [loveImg, battleImg, ajosope, clear];
+const sceneImages = [loveImg, battleImg, africaqueen2, clear];
 const nextWatch = [TaleImg, adamImg, anasiImg, africaImg];
 const topShows = [
   africaqueen,
   africaqueen2,
   africaqueen3,
-  battleImg,
-  ajosope,
-  clear,
   anasiImg,
   africaImg,
+  // battleImg,
+  // ajosope,
+  // clear,
 ];
-const filterByLatest = ["Trending", "Comming Soon ", "Download"];
+const filterByLatest = ["Trending", "Coming Soon ", "Download"];
 const filterByCategories = [
   "Action",
   "Horror",
@@ -77,7 +77,7 @@ const DesktopDesign = () => {
 
         <div className="bg-white rounded-2xl">
           {/* Scene Section */}
-          <section className="bg-white py-4 px-5 rounded-2xl ">
+          {/* <section className="bg-white py-4 px-5 rounded-2xl ">
             <h2 className="lg:text-2xl md:text-sm font-bold mb-5 md:mb-0 lg:mb-4">
               Continue Watching
             </h2>
@@ -91,6 +91,26 @@ const DesktopDesign = () => {
                     src={scene}
                     alt={`scene-${idx}`}
                     className="w-full h-full object-contain rounded-xl cursor-pointer"
+                  />
+                </div>
+              ))}
+            </div>
+          </section> */}
+
+          <section className="bg-white py-4 px-5 rounded-2xl shadow-sm">
+            <h2 className="lg:text-2xl md:text-sm font-bold mb-4">
+              Continue Watching
+            </h2>
+            <div className="overflow-x-auto md:grid md:grid-cols-4 md:gap-26 lg:gap-4 no-scrollbar mt-4">
+              {sceneImages.map((scene, idx) => (
+                <div
+                  key={idx}
+                  className="md:w-24 lg:w-full h-40  lg:h-full  rounded-xl "
+                >
+                  <img
+                    src={scene}
+                    alt={`scene-${idx}`}
+                    className="w-full h-full object-cover rounded-xl cursor-pointer"
                   />
                 </div>
               ))}
@@ -119,21 +139,22 @@ const DesktopDesign = () => {
           </section>
 
           {/* Top Shows Section */}
-          <section className="bg-white py-4 px-5 rounded-2xl ">
-            <h2 className="lg:text-2xl md:text-sm font-bold mb-4">
+
+          <section className="bg-white py-4 px-5 rounded-2xl shadow-sm">
+            <h2 className="lg:text-2xl md:text-sm font-bold">
               Top 10 TV Shows in Nigeria Today
             </h2>
 
-            <div className="flex overflow-x-auto space-x-6 no-scrollbar md:ms-4 lg:ms-10">
+            <div className="overflow-x-auto flex gap-6 md:gap-10 lg:gap-20 no-scrollbar md:ms-5 lg:ms-24 mt-4">
               {topShows.map((scene, idx) => (
                 <div
                   key={idx}
-                  className="flex-shrink-0 w-40 h-40 lg:w-60 lg:h-60 rounded-xl"
+                  className="w-32 md:w-28 lg:w-40 aspect-[2/3] flex-shrink-0 rounded-xl"
                 >
                   <img
                     src={scene}
                     alt={`scene-${idx}`}
-                    className="w-full h-full object-contain rounded-xl"
+                    className="w-full h-full object-cover rounded-xl cursor-pointer"
                   />
                 </div>
               ))}
@@ -144,7 +165,7 @@ const DesktopDesign = () => {
 
       {/* Sidebar (Desktop Only) */}
       <section className=" h-fit hidden md:block space-y-10">
-        <div className="flex bg-white p-6 rounded-2xl flex-col space-y-2">
+        <div className="flex bg-white p-4 rounded-2xl flex-col space-y-2 max-w-sm">
           {filterByLatest.map((item, idk) => {
             return (
               <div key={idk}>
@@ -153,7 +174,7 @@ const DesktopDesign = () => {
                     activeLatest === item
                       ? "bg-blue text-white"
                       : " text-black hover:bg-blue/10"
-                  } p-2 rounded-lg cursor-pointer text-sm`}
+                  } md:p-1 lg:p-2 md:rounded-md md:text-xs lg:rounded-lg cursor-pointer lg:text-sm`}
                   onClick={() => setActiveLatest(item)}
                 >
                   {item}
@@ -163,9 +184,9 @@ const DesktopDesign = () => {
           })}
         </div>
 
-        <div className="flex bg-white p-6 rounded-2xl flex-col space-y-1">
+        <div className="flex bg-white p-4 rounded-2xl flex-col space-y-1 max-w-sm">
           <div className="mb-4">
-            <h2>Categories</h2>
+            <h2 className="text-md font-bold">Categories</h2>
           </div>
 
           {filterByCategories.map((item, idk) => {
@@ -176,7 +197,7 @@ const DesktopDesign = () => {
                     activeCategories === item
                       ? "bg-blue text-white"
                       : " text-black hover:bg-blue/10"
-                  } md:p-2 lg:p-2 rounded-lg cursor-pointer text-sm`}
+                  } md:p-1 lg:p-2 rounded-lg cursor-pointer text-sm`}
                   onClick={() => setActiveCategories(item)}
                 >
                   {item}

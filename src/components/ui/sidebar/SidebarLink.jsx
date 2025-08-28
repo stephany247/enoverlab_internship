@@ -12,11 +12,11 @@ const SidebarLink = ({ to, icon: Icon, label }) => (
         }`}
       >
         <Icon
-          className={`w-5 h-5 ${
+          className={`w-6 h-6  ${
             isActive ? "text-blue" : "text-gray-text group-hover:text-blue"
           }`}
         />
-        <p>{label}</p>
+        <p className="md:text-xs lg:text-lg">{label}</p>
       </div>
     )}
   </NavLink>
