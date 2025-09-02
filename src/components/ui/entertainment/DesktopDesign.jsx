@@ -3,7 +3,7 @@ import sheldonImg from "../../../assets/sheldonImg.png";
 import adolescentImg from "../../../assets/adolescentImg.png";
 import houseGuradImg from "../../../assets/houseGuardImg.png";
 import kravenImg from "../../../assets/kravenImg.png";
-import TaleImg from "../../../assets/TaleImg.png";
+import TaleImg from "../../../assets/taleImg.png";
 import adamImg from "../../../assets/adamImg.png";
 import anasiImg from "../../../assets/anasiImg.png";
 import africaImg from "../../../assets/africaImg.png";
