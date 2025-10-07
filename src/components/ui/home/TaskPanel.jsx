@@ -102,7 +102,7 @@ export default function TaskPanel() {
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth w-full no-scrollbar"
+          className="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth w-full no-scrollbar gap-x-4"
         >
           {slides.map((group, idx) => (
             <div
