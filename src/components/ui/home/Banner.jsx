@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { assets } from "../../../assets/assets";
 
 function Banner() {
@@ -13,9 +14,9 @@ function Banner() {
             journey today — it's worth it.
           </p>
         </div>
-        <a href="/settings" className="bg-white text-darker-gray p-2 rounded-xl w-fit">
+        <Link to="/settings" className="bg-white text-darker-gray p-2 rounded-xl w-fit">
           Choose Your Plan
-        </a>
+        </Link>
       </div>
 
       <img

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FiChevronRight } from "react-icons/fi";
 import { GoPlusCircle } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 const tasks = [
   {
@@ -77,12 +78,12 @@ export default function TaskPanel() {
         <h1 className="md:text-2xl font-semibold text-darker-gray">
           Daily Task and Medication
         </h1>
-        <a
-          href="/schedule"
+        <Link
+          to="/schedule"
           className="flex items-center text-dark-gray-text hover:underline text-sm"
         >
           View All <FiChevronRight />
-        </a>
+        </Link>
       </div>
 
       <div className="relative w-full flex md:flex-col items-center gap-4 pb-2 md:pb-16">

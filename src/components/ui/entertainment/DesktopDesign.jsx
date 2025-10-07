@@ -30,7 +30,7 @@ const topShows = [
   anasiImg,
   africaImg,
 ];
-const filterByLatest = ["Trending", "Comming Soon ", "Download"];
+const filterByLatest = ["Trending", "Coming Soon ", "Download"];
 const filterByCategories = [
   "Action",
   "Horror",
@@ -124,7 +124,7 @@ const DesktopDesign = () => {
               Top 10 TV Shows in Nigeria Today
             </h2>
 
-            <div className="flex overflow-x-auto space-x-6 no-scrollbar md:ms-4 lg:ms-10">
+            <div className="flex overflow-x-auto space-x-4 no-scrollbar md:ms-4 lg:ms-10">
               {topShows.map((scene, idx) => (
                 <div
                   key={idx}

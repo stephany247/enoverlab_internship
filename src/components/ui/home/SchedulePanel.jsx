@@ -1,6 +1,7 @@
 import { FiChevronRight } from "react-icons/fi";
 import { assets } from "../../../assets/assets";
 import { FaRegClock } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 // Mock tasks (can move to a separate file later)
 const schedule = [
@@ -26,12 +27,12 @@ function SchedulePanel() {
         <h1 className="text-2xl font-semibold text-darker-gray">
           Upcoming Schedule
         </h1>
-        <a
-          href="/schedule"
+        <Link
+          to="/schedule"
           className="flex items-center text-dark-gray-text hover:underline text-sm"
         >
           View All <FiChevronRight />
-        </a>
+        </Link>
       </div>
 
       {/* Schedule */}
