@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FiChevronRight } from "react-icons/fi";
 import { GoPlusCircle } from "react-icons/go";
 import { Link } from "react-router-dom";
+import { userService } from "../../../utils/userService";
 
 const tasks = [
   {
@@ -34,6 +35,23 @@ export default function TaskPanel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
   const scrollRef = useRef(null);
+  const [reminders, setReminders] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchReminders = async () => {
+      try {
+        const data = await userService.getUserReminders();
+        setReminders(data);
+      } catch (error) {
+        console.error("Error fetching reminders:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchReminders();
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,8 +66,8 @@ export default function TaskPanel() {
 
   const cardsPerSlide = isDesktop ? 2 : 1;
   const slides = [];
-  for (let i = 0; i < tasks.length; i += cardsPerSlide) {
-    slides.push(tasks.slice(i, i + cardsPerSlide));
+  for (let i = 0; i < reminders.length; i += cardsPerSlide) {
+    slides.push(reminders.slice(i, i + cardsPerSlide));
   }
 
   // When user scrolls, figure out which "page" we're on
@@ -105,7 +123,7 @@ export default function TaskPanel() {
           onScroll={handleScroll}
           className="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth w-full no-scrollbar gap-x-4"
         >
-          {slides.map((group, idx) => (
+          {/* {slides.map((group, idx) => (
             <div
               key={idx}
               className="flex-shrink-0 w-full flex gap-4 justify-center snap-start"
@@ -114,7 +132,35 @@ export default function TaskPanel() {
                 <TaskCard key={tIdx} task={task} />
               ))}
             </div>
-          ))}
+          ))} */}
+          {loading ? (
+            // Loading skeletons
+            Array.from({ length: isDesktop ? 2 : 1 }).map((_, idx) => (
+              <div
+                key={idx}
+                className="w-full bg-gray-100 animate-pulse py-6 px-6 rounded-xl space-y-4"
+              >
+                <div className="h-5 w-1/3 bg-gray-300 rounded"></div>
+                <div className="h-3 w-1/2 bg-gray-200 rounded"></div>
+                {/* <div className="h-3 w-1/4 bg-gray-200 rounded"></div> */}
+              </div>
+            ))
+          ) : reminders.length > 0 ? (
+            slides.map((group, idx) => (
+              <div
+                key={idx}
+                className="flex-shrink-0 w-full flex gap-4 justify-center snap-start"
+              >
+                {group.map((task, tIdx) => (
+                  <TaskCard key={tIdx} task={task} />
+                ))}
+              </div>
+            ))
+          ) : (
+            <p className="text-center text-gray-400 w-full py-8">
+              No reminders found.
+            </p>
+          )}
         </div>
 
         {/* Carousel markers */}
@@ -138,14 +184,12 @@ function TaskCard({ task }) {
   return (
     <div className="w-full bg-task-card py-3 px-6 rounded-xl text-dark-gray">
       <div className="flex items-center justify-between w-full capitalize mb-2">
-        <h3 className="text-darker-gray text-lg font-medium">
-          {task.activity}
-        </h3>
-        <h4 className="text-sm">{task.day}</h4>
+        <h3 className="text-darker-gray text-lg font-medium">{task.title}</h3>
+        <h4 className="text-sm">{task.reminder_date}</h4>
       </div>
       <div className="flex justify-between w-full text-sm">
         <h4>{task.location}</h4>
-        <p className="text-sm">{task.time}</p>
+        <p className="text-sm">{task.reminder_time}</p>
       </div>
     </div>
   );
