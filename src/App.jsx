@@ -33,7 +33,7 @@ export default function App() {
           <Route path="settings" element={<Settings />} />
           <Route path="logout" element={<Logout />} />
           <Route path="explore" element={<Explore />} />
-          {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+           <Route path="*" element={<Home />} /> {/* Catch-all route */}
         </Routes>
         {!hideBottomNav && <BottomNav />}
       </main>
