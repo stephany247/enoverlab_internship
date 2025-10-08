@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { contacts } from "../utils/contacts";
 import { FaEllipsisV } from "react-icons/fa";
 import HospitalMap from "../components/ui/HospitalMap";
+import { useContacts } from "../hooks/useContacts";
 
 export default function EmergencyContact() {
   const [activeTab, setActiveTab] = useState("contacts");
@@ -16,6 +16,7 @@ export default function EmergencyContact() {
     lat: 6.5244, // Example: Lagos lat
     lng: 3.3792, // Example: Lagos lng
   };
+  const { contacts, loading } = useContacts();
 
   return (
     <div className="py-8 md:py-0">
@@ -46,37 +47,51 @@ export default function EmergencyContact() {
           <div className="flex-1 py-4">
             {activeTab === "contacts" && (
               <div className="space-y-3">
-                {contacts.map((contact, index) => {
-                  // Cycle border colors
-                  const borderColors = [
-                    "border-contact-blue",
-                    "border-contact-green",
-                    "border-contact-orange",
-                  ];
-                  const borderColor = borderColors[index % borderColors.length];
-                  return (
-                    <div
-                      key={index}
-                      className={`flex items-center justify-between p-3 bg-white hover:bg-gray-50 rounded-lg transition-colors border-l-8 ${borderColor}`}
-                    >
-                      <div className="flex items-center space-x-3">
-                        <div className="relative">
-                          <img
-                            src={contact.image}
-                            className="w-14 h-14 rounded-full "
-                          />
-                          {/* <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></div> */}
+                {loading
+                  ? [...Array(4)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center justify-between p-3 bg-gray-100 rounded-lg animate-pulse"
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className="bg-gray-300 rounded-full h-14 w-14 animate-pulse" />
+                          <div className="h-4 w-24 bg-gray-300 rounded animate-pulse" />
                         </div>
-                        <span className="font-medium text-lg">
-                          {contact.name}
-                        </span>
+                        <div className="h-4 w-1 bg-gray-300 rounded-full" />
                       </div>
-                      <button className="text-dark-gray hover:text-gray-600 cursor-pointer">
-                        <FaEllipsisV />
-                      </button>
-                    </div>
-                  );
-                })}
+                    ))
+                  : contacts.map((contact, index) => {
+                      // Cycle border colors
+                      const borderColors = [
+                        "border-contact-blue",
+                        "border-contact-green",
+                        "border-contact-orange",
+                      ];
+                      const borderColor =
+                        borderColors[index % borderColors.length];
+                      return (
+                        <div
+                          key={index}
+                          className={`flex items-center justify-between p-3 bg-white hover:bg-gray-50 rounded-lg transition-colors border-l-8 ${borderColor}`}
+                        >
+                          <div className="flex items-center space-x-3">
+                            <div className="relative">
+                              <img
+                                src={contact.image}
+                                className="w-14 h-14 rounded-full "
+                              />
+                              {/* <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></div> */}
+                            </div>
+                            <span className="font-medium text-lg">
+                              {contact.name}
+                            </span>
+                          </div>
+                          <button className="text-dark-gray hover:text-gray-600 cursor-pointer">
+                            <FaEllipsisV />
+                          </button>
+                        </div>
+                      );
+                    })}
               </div>
             )}
 

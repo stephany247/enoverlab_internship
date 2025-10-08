@@ -1,4 +1,3 @@
-// src/hooks/useUser.ts
 import { useEffect, useState } from "react";
 import { userService } from "../utils/userService";
 
@@ -11,6 +10,7 @@ export function useUser() {
       try {
         const currentUser = await userService.getCurrentUser();
         setUser(currentUser);
+        console.log("Fetch user data: ", currentUser);
       } catch (err) {
         console.error("Error fetching user:", err);
       } finally {

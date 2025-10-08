@@ -1,10 +1,11 @@
 import { GoPlusCircle } from "react-icons/go";
 import { FaPhone } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
-import { contacts } from "../../../utils/contacts";
-
+import { useContacts } from "../../../hooks/useContacts";
 
 function ContactBanner() {
+  const { contacts, loading } = useContacts();
+
   return (
     <section className="bg-white md:p-6 md:rounded-3xl md:shadow-sm space-y-4">
       {/* Header */}
@@ -22,9 +23,12 @@ function ContactBanner() {
           Set a new emergency contact
         </button>
 
-        {contacts.map((contact, index) => (
-          <ContactCard key={index} contact={contact} index={index} />
-        ))}
+        {/* Loading skeletons */}
+        {loading
+          ? [...Array(4)].map((_, i) => <LoadingCard key={i} />)
+          : contacts.map((contact, index) => (
+              <ContactCard key={index} contact={contact} index={index} />
+            ))}
       </div>
     </section>
   );
@@ -52,12 +56,31 @@ function ContactCard({ contact, index }) {
       </h3>
 
       <div className="flex justify-center gap-3 text-sm">
-        <div className="p-2 bg-white rounded-full text-black cursor-pointer hover:bg-light-blue/80">
+        <a
+          href={`tel:${contact.phone}`}
+          className="p-2 bg-white rounded-full text-black cursor-pointer hover:bg-light-blue/80"
+        >
           <FaPhone className="w-4 h-4" />
-        </div>
-        <div className="p-2 bg-white rounded-full text-black cursor-pointer hover:bg-light-blue/80">
+        </a>
+        <a
+          href={`mailto:${contact.email}`}
+          className="p-2 bg-white rounded-full text-black cursor-pointer hover:bg-light-blue/80"
+        >
           <MdMail className="w-4 h-4" />
-        </div>
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function LoadingCard() {
+  return (
+    <div className="flex flex-col items-center gap-2 bg-light-gray/40 p-4 rounded-xl min-w-36 lg:min-w-48 flex-shrink-0 animate-pulse">
+      <div className="w-12 h-12 rounded-full bg-gray-300" />
+      <div className="h-3 w-20 bg-gray-300 rounded" />
+      <div className="flex justify-center gap-3 mt-2">
+        <div className="w-8 h-8 bg-gray-300 rounded-full" />
+        <div className="w-8 h-8 bg-gray-300 rounded-full" />
       </div>
     </div>
   );

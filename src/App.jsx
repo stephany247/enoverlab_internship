@@ -26,13 +26,13 @@ export default function App() {
         <DeskopHeader />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/emergencycontact" element={<EmergencyContact />} />
-          <Route path="/smarthome" element={<SmartHome />} />
-          <Route path="/entertainment" element={<Entertainment />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/explore" element={<Explore />} />
+          <Route path="schedule" element={<Schedule />} />
+          <Route path="emergencycontact" element={<EmergencyContact />} />
+          <Route path="smarthome" element={<SmartHome />} />
+          <Route path="entertainment" element={<Entertainment />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="logout" element={<Logout />} />
+          <Route path="explore" element={<Explore />} />
           {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
         </Routes>
         {!hideBottomNav && <BottomNav />}

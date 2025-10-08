@@ -21,9 +21,9 @@ export const userService = {
     return user?.schedules || [];
   },
 
-  updateUser: async (updateData) => {
-    const res = await api.patch("/users/me", updateData);
-    return res.data;
+  getContacts: async () => {
+    const res = await api.get("/contacts");
+    return res.data.data || [];
   },
 
   deleteUser: async () => {

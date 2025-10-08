@@ -4,7 +4,7 @@ import { CiBellOn } from "react-icons/ci";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { userService } from "../../../utils/userService";
-import { useUser } from "../../../hooks/useuser";
+import { useUser } from "../../../hooks/useUser";
 
 const userName = "Martha";
 // const userImage = profileImage;

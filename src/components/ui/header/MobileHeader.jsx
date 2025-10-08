@@ -1,8 +1,6 @@
 import NavSearch from "./NavSearch";
 import { assets } from "../../../assets/assets";
-import { useEffect, useState } from "react";
-import { userService } from "../../../utils/userService";
-import { useUser } from "../../../hooks/useuser";
+import { useUser } from "../../../hooks/useUser";
 
 // const userName = "Martha";
 // const userImage = profileImage;
