@@ -1,6 +1,6 @@
 import NavSearch from "./NavSearch";
 import { assets } from "../../../assets/assets";
-import { useUser } from "../../../hooks/useUser";
+import { useUser } from "../../../hooks/useUsers";
 
 // const userName = "Martha";
 // const userImage = profileImage;
